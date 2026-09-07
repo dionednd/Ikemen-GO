@@ -3984,7 +3984,7 @@ end
 --;===========================================================
 local t_modules = {}
 for _, v in ipairs(getDirectoryFiles('external/mods')) do
-	if v:lower():match('%.([^%.\\/]-)$') == 'lua' then
+	if v:lower():match('%.([^%.\\/]-)$') == 'lua' and not v:match('[/\\]_[^/\\]+$') then
 		table.insert(t_modules, v)
 	end
 end
